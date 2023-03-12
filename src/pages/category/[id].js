@@ -5,7 +5,7 @@ import Layout from "@/layout/Index";
 import { categories } from "@/utils/categoriesList";
 import { Typography } from "@mui/material";
 
-export default function Index({ videos, category = "" }) {
+export default function Index({ videos, category }) {
   if (!videos) return <Loader />;
 
   function capitalized(word) {
@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
   ).then((data) => data.items);
 
   return {
-    props: { videos, category },
+    props: { videos: videos ? videos : null, category },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
