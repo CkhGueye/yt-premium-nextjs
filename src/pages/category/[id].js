@@ -5,7 +5,7 @@ import Layout from "@/layout/Index";
 import { categories } from "@/utils/categoriesList";
 import { Typography } from "@mui/material";
 
-export default function Index({ videos, category }) {
+export default function Index({ videos, category = "" }) {
   if (!videos) return <Loader />;
 
   function capitalized(word) {
