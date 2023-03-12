@@ -23,14 +23,9 @@ export default function Index({ videos }) {
   );
 }
 
-export async function getStaticProps({ res }) {
+export async function getStaticProps() {
   const videos = await customFetch(`search?part=snippet`).then(
     (data) => data.items
-  );
-
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
   );
 
   return {
