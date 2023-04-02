@@ -25,6 +25,7 @@ const VideoCard = ({
         image={snippet?.thumbnails?.high?.url}
         alt={snippet?.title}
         sx={{ width: { xs: "100%", sm: "100%" }, height: { xs: 170, sm: 140 } }}
+        loading="lazy"
       />
     </Link>
     <CardContent sx={{ maxHeight: 65, p: 0, mt: 1, "&:last-child": { pb: 0 } }}>

@@ -32,9 +32,9 @@ export default function Video({ videoId, videoDetails, videos }) {
                 display: "flex",
                 flexDirection: "column",
                 height: { xs: "380px", sm: "calc(100vh - 108px)" },
-                borderBottom: { xs: "2px solid #757d8b", sm: "unset" },
-                marginBottom: { xs: 2, sm: "0" },
-                paddingBottom: { xs: 2, sm: "0" },
+                borderBottom: { xs: "2px solid #757d8b", md: "unset" },
+                marginBottom: { xs: 2, md: "0" },
+                paddingBottom: { xs: 2, md: "0" },
               }}
             >
               <ReactPlayer
