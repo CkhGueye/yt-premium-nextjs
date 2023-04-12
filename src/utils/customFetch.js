@@ -1,14 +1,13 @@
-const BASE_URL = "https://youtube-v31.p.rapidapi.com";
+const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
 const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": process.env.API_KEY,
-    "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
-  },
+  maxResults: "48",
+  key: process.env.API_KEY,
 };
 
+const params = new URLSearchParams(options);
+
 export const customFetch = async (url) => {
-  const data = await fetch(`${BASE_URL}/${url}&maxResults=48`, options);
+  const data = await fetch(`${BASE_URL}/${url}&${params}`);
   return data.json();
 };
